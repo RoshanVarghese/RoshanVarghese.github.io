@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roshan Varghese - AI Developer & Data Scientist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2a2a2a;
+            --light-gray: #666666;
+            --lighter-gray: #999999;
+            --white: #ffffff;
+            --off-white: #f5f5f5;
+            --border: #e0e0e0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-gray);
+            background: var(--white);
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--black);
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 25px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--black);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--black);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 40px 80px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero-label {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--black);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--light-gray);
+            margin-bottom: 40px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            margin-bottom: 50px;
+            max-width: 650px;
+            line-height: 1.8;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid var(--black);
+        }
+        
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: var(--dark-gray);
+            border-color: var(--dark-gray);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--black);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+        
+        /* Sections */
+        section {
+            padding: 120px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            margin-bottom: 80px;
+        }
+        
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--lighter-gray);
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .section-description {
+            font-size: 1.15rem;
+            color: var(--light-gray);
+            max-width: 700px;
+            line-height: 1.8;
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            padding: 50px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .experience-header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 30px;
+            margin-bottom: 30px;
+            align-items: start;
+        }
+        
+        .experience-title {
+            font-size: 1.75rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .experience-company {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            font-weight: 500;
+        }
+        
+        .experience-date {
+            font-size: 0.9rem;
+            color: var(--lighter-gray);
+            text-align: right;
+            padding: 8px 20px;
+            border: 1px solid var(--border);
+            white-space: nowrap;
+        }
+        
+        .experience-description {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .experience-list {
+            list-style: none;
+        }
+        
+        .experience-list li {
+            padding: 12px 0 12px 25px;
+            position: relative;
+            color: var(--light-gray);
+            line-height: 1.7;
+        }
+        
+        .experience-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 22px;
+            width: 6px;
+            height: 6px;
+            background: var(--black);
+        }
+        
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+        
+        .project-card {
+            border: 1px solid var(--border);
+            background: var(--white);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .project-card:hover {
+            border-color: var(--black);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image {
+            height: 280px;
+            background: var(--off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+        }
+        
+        .project-number {
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--black);
+            opacity: 0.1;
+        }
+        
+        .project-content {
+            padding: 40px;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .project-date {
+            font-size: 0.85rem;
+            color: var(--lighter-gray);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .project-description {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .tag {
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            border-color: var(--black);
+            color: var(--black);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .project-link {
+            padding: 12px 24px;
+            border: 1px solid var(--black);
+            color: var(--black);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+        
+        .skill-category {
+            background: var(--white);
+            padding: 40px;
+            transition: background 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            background: var(--off-white);
+        }
+        
+        .skill-category h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            color: var(--lighter-gray);
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .skill-item {
+            font-size: 1rem;
+            color: var(--dark-gray);
+            font-weight: 500;
+            padding: 8px 0;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+        
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            gap: 40px;
+        }
+        
+        .education-item {
+            padding: 50px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .education-item:hover {
+            border-color: var(--black);
+        }
+        
+        .education-degree {
+            font-size: 1.75rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .education-institution {
+            font-size: 1.15rem;
+            color: var(--light-gray);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .education-year {
+            font-size: 0.9rem;
+            color: var(--lighter-gray);
+            letter-spacing: 1px;
+        }
+        
+        .education-divider {
+            margin: 60px 0;
+            height: 1px;
+            background: var(--border);
+        }
+        
+        /* Certifications */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+        
+        .cert-item {
+            background: var(--white);
+            padding: 30px;
+            transition: background 0.3s ease;
+        }
+        
+        .cert-item:hover {
+            background: var(--off-white);
+        }
+        
+        .cert-name {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+        
+        .cert-provider {
+            font-size: 0.9rem;
+            color: var(--lighter-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info p {
+            color: var(--light-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        
+        .contact-list {
+            list-style: none;
+        }
+        
+        .contact-item {
+            margin-bottom: 30px;
+        }
+        
+        .contact-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--lighter-gray);
+            margin-bottom: 8px;
+        }
+        
+        .contact-value {
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+        
+        .contact-value a {
+            color: var(--black);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .contact-value a:hover {
+            opacity: 0.6;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-text {
+            color: var(--lighter-gray);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--black);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+            }
+            
+            .nav-links {
+                gap: 25px;
+            }
+            
+            .hero {
+                padding: 100px 20px 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 80px 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .experience-header {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-date {
+                text-align: left;
+                width: fit-content;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .skills-grid,
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">RV</a>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-label">AI Developer & Data Scientist</div>
+                <h1>Roshan Varghese</h1>
+                <p class="hero-subtitle">Building intelligent systems that bridge the gap between cutting-edge AI research and real-world applications.</p>
+                <p class="hero-description">
+                    Currently architecting multi-agent systems at KOTS Daily Services and pursuing a Master's in Data Science. 
+                    Specialized in LangChain, FastAPI, machine learning, and full-stack development.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-header">
+            <div class="section-label">Career</div>
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-description">
+                Professional journey spanning AI development, data science, and software engineering across innovative startups and global consulting firms.
+            </p>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <h3 class="experience-title">AI Developer Intern</h3>
+                    <div class="experience-company">KOTS Daily Services Pvt Ltd, Bangalore</div>
+                </div>
+                <div class="experience-date">April 2025 – Present</div>
+            </div>
+            <ul class="experience-list">
+                <li>Architecting a scalable multi-agent framework using LangChain and FastAPI, implementing RAG pipeline with FAISS and Google Gemini to handle complex queries and enable intelligent agent coordination</li>
+                <li>Developing a low-code/no-code platform to simplify agent creation and deployment, allowing non-technical users to build and integrate custom agents into the broader ecosystem</li>
+                <li>Designing and implementing orchestration patterns for coordinating multiple specialized AI agents, enabling seamless collaboration between different AI services and tools</li>
+                <li>Optimizing vector search performance and embedding strategies to improve retrieval accuracy and response time in production environments</li>
+            </ul>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <div>
+                    <h3 class="experience-title">Associate Analyst</h3>
+                    <div class="experience-company">Deloitte Consulting USI, Bangalore</div>
+                </div>
+                <div class="experience-date">August 2022 – June 2024</div>
+            </div>
+            <ul class="experience-list">
+                <li>Project 1: Validated functionality of approximately 80 reports generated using SAP BI, systematically identifying and documenting issues to ensure data accuracy and business intelligence integrity</li>
+                <li>Project 2: Executed comprehensive end-to-end testing for 184 reports created with ETL tools, conducting detailed functional reviews that significantly reduced deployment issues and improved data pipeline reliability</li>
+                <li>Resolved five critical production issues related to ETL processes and SQL query optimization, directly impacting data processing efficiency and report generation performance</li>
+                <li>Contributed to proof-of-concept development, exploring innovative solutions for complex data transformation and reporting challenges</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-header">
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-description">
+                Selected work demonstrating expertise in AI systems, machine learning, and full-stack development.
+            </p>
+        </div>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-number">01</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Agricultural Multi-Agent System</h3>
+                    <div class="project-date">Present - Research in Progress</div>
+                    <p class="project-description">
+                        Leading development of a comprehensive multi-agent system addressing accessibility gaps in agricultural AI. 
+                        Features a FastAPI backend with an LLM-based coordinator for intelligent agent orchestration. Research paper 
+                        in progress: "A Farmer-Centric Orchestration Framework for Collaborative Multi-Agent Agricultural AI Systems."
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">LangChain</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Multi-Agent Systems</span>
+                        <span class="tag">RAG Pipeline</span>
+                        <span class="tag">LLM Orchestration</span>
+                        <span class="tag">Research</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Research</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-number">02</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">IoT Malware Detection System</h3>
+                    <div class="project-date">March 2025</div>
+                    <p class="project-description">
+                        Engineered a machine learning system for identifying and classifying malware in IoT devices. Implemented 
+                        and evaluated Random Forest and XGBoost models, achieving high accuracy in detecting various malware types. 
+                        Developed feature engineering pipeline to improve model performance and minimize false positives.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Random Forest</span>
+                        <span class="tag">XGBoost</span>
+                        <span class="tag">Cybersecurity</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Scikit-Learn</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-number">03</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Event Horizon Management System</h3>
+                    <div class="project-date">December 2024</div>
+                    <p class="project-description">
+                        Developed comprehensive full-stack web application for event management. Designed and implemented 
+                        responsive user interface using HTML, CSS, and JavaScript. Built robust backend using Flask framework 
+                        with MySQL database integration for efficient data management and retrieval.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Flask</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Full-Stack</span>
+                        <span class="tag">SQLAlchemy</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Live Demo</a>
+                        <a href="#" class="project-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header">
+            <div class="section-label">Expertise</div>
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-description">
+                Comprehensive technical expertise across programming languages, frameworks, and tools for building modern AI and data-driven applications.
+            </p>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-list">
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">Java</div>
+                    <div class="skill-item">HTML/CSS</div>
+                    <div class="skill-item">JavaScript</div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Data Science & ML</h3>
+                <div class="skill-list">
+                    <div class="skill-item">Pandas</div>
+                    <div class="skill-item">NumPy</div>
+                    <div class="skill-item">Scikit-Learn</div>
+                    <div class="skill-item">LangChain</div>
+                    <div class="skill-item">Matplotlib</div>
+                    <div class="skill-item">FAISS</div>
+                    <div class="skill-item">XGBoost</div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Web & Databases</h3>
+                <div class="skill-list">
+                    <div class="skill-item">FastAPI</div>
+                    <div class="skill-item">Flask</div>
+                    <div class="skill-item">SQLAlchemy</div>
+                    <div class="skill-item">SQL Server</div>
+                    <div class="skill-item">MySQL</div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Developer Tools</h3>
+                <div class="skill-list">
+                    <div class="skill-item">Git</div>
+                    <div class="skill-item">Docker</div>
+                    <div class="skill-item">VS Code</div>
+                    <div class="skill-item">Pentaho</div>
+                    <div class="skill-item">Informatica</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-header">
+            <div class="section-label">Academic Background</div>
+            <h2 class="section-title">Education</h2>
+        </div>
+        
+        <div class="education-grid">
+            <div class="education-item">
+                <h3 class="education-degree">Master of Science in Data Science</h3>
+                <div class="education-institution">Christ (Deemed to be University), Bangalore</div>
+                <div class="education-year">2024 – 2026 (Expected)</div>
+            </div>
+            
+            <div class="education-item">
+                <h3 class="education-degree">Bachelor of Science</h3>
+                <div class="education-institution">Computer Science, Mathematics & Electronics<br>Christ (Deemed to be University), Bangalore</div>
+                <div class="education-year">2019 – 2022</div>
+            </div>
+        </div>
+        
+        <div class="education-divider"></div>
+        
+        <div class="section-header" style="margin-bottom: 50px; margin-top: 0;">
+            <div class="section-label">Professional Development</div>
+            <h2 class="section-title">Certifications</h2>
+        </div>
+        
+        <div class="certifications-grid">
+            <div class="cert-item">
+                <div class="cert-name">Dataiku Core Designer (Fundamentals)</div>
+                <div class="cert-provider">Dataiku</div>
+            </div>
+            
+            <div class="cert-item">
+                <div class="cert-name">Python Programming: A Concise Introduction</div>
+                <div class="cert-provider">Coursera</div>
+            </div>
+            
+            <div class="cert-item">
+                <div class="cert-name">Database Management Essentials</div>
+                <div class="cert-provider">Coursera</div>
+            </div>
+            
+            <div class="cert-item">
+                <div class="cert-name">Programming Fundamentals</div>
+                <div class="cert-provider">Coursera</div>
+            </div>
+            
+            <div class="cert-item">
+                <div class="cert-name">Artificial Intelligence (Fundamentals)</div>
+                <div class="cert-provider">My Captain</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <div class="section-label">Get In Touch</div>
+            <h2 class="section-title">Let's Connect</h2>
+        </div>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Available for opportunities</h3>
+                <p>
+                    I'm always interested in discussing new projects, creative ideas, or opportunities to contribute to innovative AI and data science initiatives. Whether you're looking to collaborate or just want to connect, feel free to reach out.
+                </p>
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">
+                            <a href="mailto:roshan.varghese5801@gmail.com">roshan.varghese5801@gmail.com</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-label">Phone</div>
+                        <div class="contact-value">
+                            <a href="tel:+919632244517">+91 9632244517</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-label">Location</div>
+                        <div class="contact-value">Bengaluru, Karnataka</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="contact-info">
+                <h3>Online Presence</h3>
+                <p>
+                    Connect with me on professional networks to stay updated with my latest projects, research work, and contributions to the AI and data science community.
+                </p>
+                <ul class="contact-list">
+                    <li class="contact-item">
+                        <div class="contact-label">LinkedIn</div>
+                        <div class="contact-value">
+                            <a href="https://www.linkedin.com/in/roshan-varghese-022986217" target="_blank">linkedin.com/in/roshan-varghese-022986217</a>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-label">GitHub</div>
+                        <div class="contact-value">
+                            <a href="#" target="_blank">github.com/RoshanVarghese</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">© 2025 Roshan Varghese. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
