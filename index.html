@@ -933,7 +933,8 @@
         }
         
         #education {
-            background: linear-gradient(135deg, var(--very-light) 0%, var(--white) 100%);
+            background: linear-gradient(to bottom, var(--very-light), var(--white));
+            position: relative;
         }
         
         .education-grid {
@@ -1013,7 +1014,11 @@
             background: var(--navy-primary);
             border-radius: 50%;
         }
-        
+
+        #certifications {
+            background: var(--white);
+            position: relative;
+        }
         .certifications-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
@@ -1771,9 +1776,11 @@
             </div>
         </div>
         
-        <div class="education-divider"></div>
-        
-        <div class="section-header" style="margin-bottom: 50px; margin-top: 0;">
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="section-header">
             <div class="section-number">05</div>
             <div class="section-label">Professional Development</div>
             <h2 class="section-title">Certifications</h2>
