@@ -129,6 +129,37 @@
         .nav-links a:hover::after {
             width: 100%;
         }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .nav-toggle span {
+            width: 26px;
+            height: 3px;
+            background: var(--navy-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
         
         .hero {
             min-height: 100vh;
@@ -701,6 +732,106 @@
             color: var(--lighter-gray);
             font-style: italic;
         }
+
+        .projects-subheading {
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--navy-primary);
+            margin: 90px 0 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .projects-subheading::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--navy-primary);
+        }
+
+        .projects-grid.featured {
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+        }
+
+        .projects-compact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .project-compact-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 32px;
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.06);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .project-compact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(30, 58, 95, 0.12);
+            border-color: var(--navy-primary);
+        }
+
+        .project-compact-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 6px;
+        }
+
+        .project-compact-date {
+            font-size: 0.75rem;
+            color: var(--navy-primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .project-compact-description {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .project-compact-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .project-compact-tags .tag {
+            padding: 5px 12px;
+            font-size: 0.75rem;
+        }
+
+        .project-compact-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .project-compact-links a {
+            color: var(--navy-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--navy-primary);
+            padding-bottom: 1px;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-compact-links a:hover {
+            opacity: 0.7;
+        }
         
         #skills {
             background: var(--white);
@@ -778,42 +909,27 @@
         
         .skill-list {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
             position: relative;
             z-index: 1;
         }
         
         .skill-item {
-            font-size: 1.05rem;
-            color: var(--dark-gray);
+            font-size: 0.9rem;
+            color: var(--navy-primary);
             font-weight: 600;
-            padding: 12px 0;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .skill-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--navy-primary);
-            transition: width 0.3s ease;
+            padding: 9px 16px;
+            background: rgba(30, 58, 95, 0.06);
+            border-radius: 20px;
+            transition: all 0.25s ease;
+            border: 1px solid transparent;
         }
         
         .skill-item:hover {
-            color: var(--navy-primary);
-            padding-left: 25px;
-        }
-        
-        .skill-item:hover::before {
-            width: 12px;
+            background: var(--navy-primary);
+            color: var(--white);
+            transform: translateY(-2px);
         }
         
         #education {
@@ -1141,8 +1257,44 @@
                 padding: 20px 30px;
             }
             
+            .nav-toggle {
+                display: flex;
+            }
+
             .nav-links {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 320px;
+                height: 100vh;
+                background: var(--white);
+                box-shadow: -10px 0 40px rgba(30, 58, 95, 0.15);
+                padding: 100px 40px;
+                gap: 30px;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-overlay {
                 display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(10, 22, 40, 0.4);
+                z-index: 999;
+            }
+
+            .nav-overlay.active {
+                display: block;
             }
             
             .hero {
@@ -1210,15 +1362,21 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">Roshan Varghese</a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
     
     <!-- Hero Section -->
     <div class="hero">
@@ -1273,6 +1431,20 @@
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
+                        <h3 class="experience-title">Vision AI Engineer (Graduate Practicum)</h3>
+                        <div class="experience-company">Codexoho Digitals Pvt Ltd, Bangalore</div>
+                    </div>
+                    <div class="experience-date">February 2026 – April 2026</div>
+                </div>
+                <ul class="experience-list">
+                    <li>Automated employee/visitor identification and attendance logging by fine-tuning an OpenCV facial recognition pipeline, deployed live via a FastAPI backend and Next.js/React dashboard (Postgres, Docker, VPS, Tailscale-tunneled RTSP)</li>
+                    <li>Piloted the fine-tuned pipeline on 2 cameras in production and led investigation into GPU-efficient scaling strategies (quantization, batching) to extend the system to the full 40-camera deployment</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
                         <h3 class="experience-title">AI/ML Engineer (Graduate Practicum)</h3>
                         <div class="experience-company">KOTS Daily Services Pvt Ltd, Bangalore</div>
                     </div>
@@ -1314,7 +1486,7 @@
             </p>
         </div>
         
-        <div class="projects-grid">
+        <div class="projects-grid featured">
             <!-- 1. KrishiSahayak -->
             <div class="project-card">
                 <div class="project-image"><div class="project-number">01</div></div>
@@ -1340,42 +1512,20 @@
                 </div>
             </div>
 
-            <!-- 2. FinMentor AI -->
-            <div class="project-card">
-                <div class="project-image"><div class="project-number">02</div></div>
-                <div class="project-content">
-                    <h3 class="project-title">FinMentor AI</h3>
-                    <div class="project-date">Oct – Dec 2025 · Paused / Iterating</div>
-                    <p class="project-description">
-                        A financial advisory system powered by specialized AI agents using a DSPy + LangChain architecture, providing 
-                        personalized investment advice, market analysis, and portfolio insights through a chat interface. FastAPI backend 
-                        with PGVector for semantic search; React/Vite frontend with TanStack Query and TailwindCSS. Development is 
-                        currently paused with further improvements planned.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">DSPy</span>
-                        <span class="tag">LangChain</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">PGVector</span>
-                        <span class="tag">React</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/RoshanVarghese/PortifolioBuilder" class="project-link" target="_blank">GitHub</a>
-                    </div>
-                </div>
-            </div>
+            <!-- 2. FinMentor AI (was featured, now removed from here) -->
 
             <!-- 3. Agricultural Multi-Agent System -->
             <div class="project-card">
-                <div class="project-image"><div class="project-number">03</div></div>
+                <div class="project-image"><div class="project-number">02</div></div>
                 <div class="project-content">
                     <h3 class="project-title">Agricultural Multi-Agent System &amp; Research</h3>
-                    <div class="project-date">November 2025 · Research Paper In Progress</div>
+                    <div class="project-date">Jul – Nov 2025 · Presented at WCSC 2026</div>
                     <p class="project-description">
                         A 4-agent Agentic AI system (advisory, pricing, pest, chat) with an LLM coordinator and FastAPI backend for 
                         farmer queries. Combines RAG over government scheme PDFs, price forecasting (ARIMA/SARIMA/Prophet), and a 
-                        14-class pest detection CV model. Companion research paper on farmer-centric multi-agent orchestration is 
-                        currently being written.
+                        14-class pest detection CV model. Co-authored paper, <em>"A Farmer-Centric Orchestration Framework for 
+                        Collaborative Multi-Agent Agricultural AI Systems,"</em> presented at the 3rd World Congress on Smart 
+                        Computing (WCSC 2026), Bangkok, Thailand — January 2026.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Multi-Agent</span>
@@ -1383,130 +1533,132 @@
                         <span class="tag">FastAPI</span>
                         <span class="tag">Time-Series Forecasting</span>
                         <span class="tag">Computer Vision</span>
+                        <span class="tag">Published Research</span>
                     </div>
                     <div class="project-links">
+                        <a href="https://app-v3.proofeasy.io/credential/o9hsaz17594?domain=https%3A%2F%2Fscrs.in" class="project-link" target="_blank">View Credential</a>
                         <span class="project-note">Code not yet published — happy to walk through it directly</span>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 4. Text-to-Image Generator -->
-            <div class="project-card">
-                <div class="project-image"><div class="project-number">04</div></div>
-                <div class="project-content">
-                    <h3 class="project-title">Text-to-Image Generator</h3>
-                    <div class="project-date">August 2025 · Completed</div>
-                    <p class="project-description">
-                        A fine-tuned Stable Diffusion model that generates unique shoe designs from text prompts, using LoRA-based 
-                        fine-tuning (PEFT) for efficient adaptation. Deployed as an interactive Gradio app and hosted publicly on 
-                        Hugging Face Spaces.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Stable Diffusion</span>
-                        <span class="tag">PEFT / LoRA</span>
-                        <span class="tag">Diffusers</span>
-                        <span class="tag">Gradio</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/RoshanVarghese/TextToImage" class="project-link" target="_blank">GitHub</a>
-                        <a href="https://huggingface.co/spaces/roshanVarghese/ShoeGenerator" class="project-link" target="_blank">Hugging Face</a>
-                        <a href="https://colab.research.google.com/github/RoshanVarghese/TextToImage/blob/main/GenAI_TextToImage_GitHub.ipynb" class="project-link" target="_blank">Colab</a>
-                    </div>
+        <h3 class="projects-subheading">More Projects</h3>
+        <div class="projects-compact-grid">
+
+            <!-- FinMentor AI -->
+            <div class="project-compact-card">
+                <div class="project-compact-title">FinMentor AI</div>
+                <div class="project-compact-date">Oct – Dec 2025 · Paused / Iterating</div>
+                <p class="project-compact-description">
+                    Financial advisory system using specialized AI agents (DSPy + LangChain) for investment advice, market 
+                    analysis, and portfolio insights via a chat interface. FastAPI + PGVector backend, React/Vite frontend.
+                </p>
+                <div class="project-compact-tags">
+                    <span class="tag">DSPy</span>
+                    <span class="tag">LangChain</span>
+                    <span class="tag">PGVector</span>
+                    <span class="tag">React</span>
+                </div>
+                <div class="project-compact-links">
+                    <a href="https://github.com/RoshanVarghese/PortifolioBuilder" target="_blank">GitHub</a>
+                    <span class="project-note">(private — message me for access)</span>
                 </div>
             </div>
 
-            <!-- 5. VAE Face Generator -->
-            <div class="project-card">
-                <div class="project-image"><div class="project-number">05</div></div>
-                <div class="project-content">
-                    <h3 class="project-title">VAE Face Generator</h3>
-                    <div class="project-date">August 2025 · Completed</div>
-                    <p class="project-description">
-                        A Variational Autoencoder that reconstructs uploaded face images and generates new random faces by sampling 
-                        from a learned latent space, with an interactive Gradio interface for both reconstruction and generation.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag">VAE</span>
-                        <span class="tag">Gradio</span>
-                        <span class="tag">Computer Vision</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/RoshanVarghese/VAE_FaceGenerator" class="project-link" target="_blank">GitHub</a>
-                    </div>
+            <!-- Text-to-Image Generator -->
+            <div class="project-compact-card">
+                <div class="project-compact-title">Text-to-Image Generator</div>
+                <div class="project-compact-date">August 2025 · Completed</div>
+                <p class="project-compact-description">
+                    Fine-tuned Stable Diffusion (LoRA/PEFT) generating custom shoe designs from text prompts, deployed as a 
+                    Gradio app hosted on Hugging Face Spaces.
+                </p>
+                <div class="project-compact-tags">
+                    <span class="tag">Stable Diffusion</span>
+                    <span class="tag">PEFT / LoRA</span>
+                    <span class="tag">Gradio</span>
+                </div>
+                <div class="project-compact-links">
+                    <a href="https://github.com/RoshanVarghese/TextToImage" target="_blank">GitHub</a>
+                    <a href="https://huggingface.co/spaces/roshanVarghese/ShoeGenerator" target="_blank">Hugging Face</a>
+                    <a href="https://colab.research.google.com/github/RoshanVarghese/TextToImage/blob/main/GenAI_TextToImage_GitHub.ipynb" target="_blank">Colab</a>
                 </div>
             </div>
 
-            <!-- 6. Electricity Demand Forecasting -->
-            <div class="project-card">
-                <div class="project-image"><div class="project-number">06</div></div>
-                <div class="project-content">
-                    <h3 class="project-title">Electricity Demand Forecasting</h3>
-                    <div class="project-date">August 2025 · Completed</div>
-                    <p class="project-description">
-                        An interactive web app forecasting electricity demand from climatic data, comparing three forecasting 
-                        approaches — Prophet, SARIMAX, and LSTM — side by side, letting users predict future consumption under 
-                        different expected weather conditions.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Prophet</span>
-                        <span class="tag">SARIMAX</span>
-                        <span class="tag">LSTM</span>
-                        <span class="tag">Gradio</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/RoshanVarghese/ElectricityDemandForecasts" class="project-link" target="_blank">GitHub</a>
-                        <a href="https://colab.research.google.com/github/RoshanVarghese/ElectricityDemandForecasts/blob/main/TS_5ED_Forecast.ipynb" class="project-link" target="_blank">Colab</a>
-                    </div>
+            <!-- VAE Face Generator -->
+            <div class="project-compact-card">
+                <div class="project-compact-title">VAE Face Generator</div>
+                <div class="project-compact-date">August 2025 · Completed</div>
+                <p class="project-compact-description">
+                    Variational Autoencoder that reconstructs uploaded face images and generates new random faces from a 
+                    learned latent space, with an interactive Gradio interface.
+                </p>
+                <div class="project-compact-tags">
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">VAE</span>
+                    <span class="tag">Gradio</span>
+                </div>
+                <div class="project-compact-links">
+                    <a href="https://github.com/RoshanVarghese/VAE_FaceGenerator" target="_blank">GitHub</a>
                 </div>
             </div>
 
-            <!-- 7. IoT Malware Detection -->
-            <div class="project-card">
-                <div class="project-image"><div class="project-number">07</div></div>
-                <div class="project-content">
-                    <h3 class="project-title">IoT Malware Detection System</h3>
-                    <div class="project-date">March 2025 · Completed</div>
-                    <p class="project-description">
-                        A machine learning system for identifying and classifying malware in IoT network traffic. Implemented and 
-                        compared Random Forest and XGBoost classifiers, with a feature engineering pipeline built to improve model 
-                        performance and reduce false positives.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Random Forest</span>
-                        <span class="tag">XGBoost</span>
-                        <span class="tag">Cybersecurity</span>
-                        <span class="tag">Scikit-Learn</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/RoshanVarghese/IoTMalware_ML_Project" class="project-link" target="_blank">GitHub</a>
-                        <span class="project-note">(private repo — message me for access)</span>
-                    </div>
+            <!-- Electricity Demand Forecasting -->
+            <div class="project-compact-card">
+                <div class="project-compact-title">Electricity Demand Forecasting</div>
+                <div class="project-compact-date">August 2025 · Completed</div>
+                <p class="project-compact-description">
+                    Interactive app forecasting electricity demand from climatic data, comparing Prophet, SARIMAX, and LSTM 
+                    models side by side under different weather scenarios.
+                </p>
+                <div class="project-compact-tags">
+                    <span class="tag">Prophet</span>
+                    <span class="tag">SARIMAX</span>
+                    <span class="tag">LSTM</span>
+                </div>
+                <div class="project-compact-links">
+                    <a href="https://github.com/RoshanVarghese/ElectricityDemandForecasts" target="_blank">GitHub</a>
+                    <a href="https://colab.research.google.com/github/RoshanVarghese/ElectricityDemandForecasts/blob/main/TS_5ED_Forecast.ipynb" target="_blank">Colab</a>
                 </div>
             </div>
 
-            <!-- 8. Event Horizon -->
-            <div class="project-card">
-                <div class="project-image"><div class="project-number">08</div></div>
-                <div class="project-content">
-                    <h3 class="project-title">Event Horizon – Full-Stack App</h3>
-                    <div class="project-date">December 2024 · Completed</div>
-                    <p class="project-description">
-                        A full-stack event management application with a Flask backend, MySQL database, and a responsive 
-                        HTML/CSS/JS frontend, including authentication and CRUD APIs — an early backend/API design foundation 
-                        for later agentic systems work.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Flask</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/RoshanVarghese/MDSWebProject" class="project-link" target="_blank">GitHub</a>
-                        <span class="project-note">(private repo — message me for access)</span>
-                    </div>
+            <!-- IoT Malware Detection -->
+            <div class="project-compact-card">
+                <div class="project-compact-title">IoT Malware Detection System</div>
+                <div class="project-compact-date">March 2025 · Completed</div>
+                <p class="project-compact-description">
+                    ML system identifying and classifying malware in IoT network traffic using Random Forest and XGBoost, 
+                    with a feature engineering pipeline to reduce false positives.
+                </p>
+                <div class="project-compact-tags">
+                    <span class="tag">Random Forest</span>
+                    <span class="tag">XGBoost</span>
+                    <span class="tag">Cybersecurity</span>
+                </div>
+                <div class="project-compact-links">
+                    <a href="https://github.com/RoshanVarghese/IoTMalware_ML_Project" target="_blank">GitHub</a>
                 </div>
             </div>
+
+            <!-- Event Horizon -->
+            <div class="project-compact-card">
+                <div class="project-compact-title">Event Horizon – Full-Stack App</div>
+                <div class="project-compact-date">December 2024 · Completed</div>
+                <p class="project-compact-description">
+                    Full-stack event management app with a Flask backend, MySQL database, and responsive HTML/CSS/JS 
+                    frontend, including authentication and CRUD APIs.
+                </p>
+                <div class="project-compact-tags">
+                    <span class="tag">Flask</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+                <div class="project-compact-links">
+                    <a href="https://github.com/RoshanVarghese/MDSWebProject" target="_blank">GitHub</a>
+                </div>
+            </div>
+
         </div>
     </section>
     
@@ -1527,10 +1679,15 @@
                 <div class="skill-list">
                     <div class="skill-item">LangChain</div>
                     <div class="skill-item">DSPy</div>
-                    <div class="skill-item">RAG / Vector Databases</div>
-                    <div class="skill-item">FAISS · ChromaDB · PGVector</div>
+                    <div class="skill-item">RAG</div>
+                    <div class="skill-item">Vector Databases</div>
+                    <div class="skill-item">FAISS</div>
+                    <div class="skill-item">ChromaDB</div>
+                    <div class="skill-item">PGVector</div>
                     <div class="skill-item">Embeddings</div>
-                    <div class="skill-item">LLMs (Gemini, Claude, OpenAI)</div>
+                    <div class="skill-item">Gemini</div>
+                    <div class="skill-item">Claude</div>
+                    <div class="skill-item">OpenAI</div>
                     <div class="skill-item">Google ADK</div>
                     <div class="skill-item">Prompt Engineering</div>
                 </div>
@@ -1540,23 +1697,39 @@
                 <h3>ML / Computer Vision</h3>
                 <div class="skill-list">
                     <div class="skill-item">OpenCV</div>
-                    <div class="skill-item">Random Forest · XGBoost</div>
+                    <div class="skill-item">Random Forest</div>
+                    <div class="skill-item">XGBoost</div>
                     <div class="skill-item">Time-Series Forecasting</div>
-                    <div class="skill-item">Stable Diffusion / VAE</div>
+                    <div class="skill-item">Stable Diffusion</div>
+                    <div class="skill-item">VAE</div>
                     <div class="skill-item">TensorFlow</div>
                 </div>
             </div>
             
             <div class="skill-category">
-                <h3>Backend & Data</h3>
+                <h3>Backend & APIs</h3>
                 <div class="skill-list">
                     <div class="skill-item">FastAPI</div>
                     <div class="skill-item">Flask</div>
+                    <div class="skill-item">Node.js</div>
+                    <div class="skill-item">Next.js</div>
+                    <div class="skill-item">React</div>
                     <div class="skill-item">REST APIs</div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Data & BI</h3>
+                <div class="skill-list">
                     <div class="skill-item">ETL Pipelines</div>
-                    <div class="skill-item">SQL · pandas / EDA</div>
-                    <div class="skill-item">PostgreSQL / MySQL</div>
-                    <div class="skill-item">SAP BI · Power BI</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">pandas / EDA</div>
+                    <div class="skill-item">PostgreSQL</div>
+                    <div class="skill-item">MySQL</div>
+                    <div class="skill-item">SAP BI</div>
+                    <div class="skill-item">Power BI</div>
+                    <div class="skill-item">Pentaho</div>
+                    <div class="skill-item">Informatica</div>
                 </div>
             </div>
             
@@ -1567,8 +1740,9 @@
                     <div class="skill-item">Linux (VPS)</div>
                     <div class="skill-item">Git</div>
                     <div class="skill-item">Tailscale</div>
-                    <div class="skill-item">Python · SQL</div>
-                    <div class="skill-item">JavaScript · HTML/CSS</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">HTML/CSS</div>
                     <div class="skill-item">Java (academic)</div>
                 </div>
             </div>
@@ -1600,6 +1774,7 @@
         <div class="education-divider"></div>
         
         <div class="section-header" style="margin-bottom: 50px; margin-top: 0;">
+            <div class="section-number">05</div>
             <div class="section-label">Professional Development</div>
             <h2 class="section-title">Certifications</h2>
         </div>
@@ -1705,5 +1880,29 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+
+        function closeMenu() {
+            navToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+        }
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        });
+
+        navOverlay.addEventListener('click', closeMenu);
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
 </body>
 </html>
