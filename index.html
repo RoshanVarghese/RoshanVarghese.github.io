@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roshan Varghese - AI Developer & Data Scientist</title>
+    <title>Roshan Varghese - AI Engineer</title>
     <style>
         * {
             margin: 0;
@@ -42,7 +42,6 @@
             color: var(--black);
         }
         
-        /* Navigation - Unique Split Design */
         nav {
             position: fixed;
             top: 0;
@@ -131,7 +130,6 @@
             width: 100%;
         }
         
-        /* Hero Section - Bold Asymmetric Design */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -306,7 +304,6 @@
             transform: translateY(-3px);
         }
         
-        /* Hero Stats - Unique Element */
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -342,7 +339,6 @@
             letter-spacing: 1px;
         }
         
-        /* Section Styling */
         section {
             padding: 140px 60px;
             max-width: 1400px;
@@ -406,7 +402,6 @@
             line-height: 1.9;
         }
         
-        /* Experience Section - Timeline Design */
         #experience {
             background: var(--white);
             position: relative;
@@ -529,7 +524,6 @@
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
         }
         
-        /* Projects Section - Card Grid with Unique Layout */
         #projects {
             background: linear-gradient(to bottom, var(--very-light), var(--white));
             position: relative;
@@ -573,7 +567,7 @@
         }
         
         .project-image {
-            height: 320px;
+            height: 220px;
             background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 50%, var(--navy-light) 100%);
             display: flex;
             align-items: center;
@@ -604,7 +598,7 @@
         }
         
         .project-number {
-            font-size: 10rem;
+            font-size: 7rem;
             font-weight: 900;
             color: rgba(255, 255, 255, 0.1);
             position: relative;
@@ -616,7 +610,7 @@
         }
         
         .project-title {
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             margin-bottom: 15px;
             font-weight: 700;
             color: var(--navy-dark);
@@ -635,7 +629,7 @@
             color: var(--light-gray);
             line-height: 1.9;
             margin-bottom: 30px;
-            font-size: 1.05rem;
+            font-size: 1.02rem;
         }
         
         .project-tags {
@@ -665,6 +659,8 @@
         .project-links {
             display: flex;
             gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
         }
         
         .project-link {
@@ -699,8 +695,13 @@
         .project-link:hover::before {
             left: 0;
         }
+
+        .project-note {
+            font-size: 0.85rem;
+            color: var(--lighter-gray);
+            font-style: italic;
+        }
         
-        /* Skills Section - Modern Grid */
         #skills {
             background: var(--white);
             position: relative;
@@ -815,7 +816,6 @@
             width: 12px;
         }
         
-        /* Education Section - Split Layout */
         #education {
             background: linear-gradient(135deg, var(--very-light) 0%, var(--white) 100%);
         }
@@ -898,7 +898,6 @@
             border-radius: 50%;
         }
         
-        /* Certifications */
         .certifications-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
@@ -912,6 +911,8 @@
             transition: all 0.3s ease;
             position: relative;
             border: 2px solid var(--border);
+            text-decoration: none;
+            display: block;
         }
         
         .cert-item::after {
@@ -949,9 +950,15 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .cert-date {
+            font-size: 0.85rem;
+            color: var(--lighter-gray);
+            font-weight: 600;
         }
         
-        /* Contact Section - Split Design */
         #contact {
             background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-primary) 100%);
             color: var(--white);
@@ -1070,7 +1077,6 @@
             width: 100%;
         }
         
-        /* Footer */
         footer {
             background: var(--navy-dark);
             color: rgba(255, 255, 255, 0.8);
@@ -1120,7 +1126,6 @@
             color: var(--white);
         }
         
-        /* Responsive Design */
         @media (max-width: 1200px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -1219,13 +1224,13 @@
     <div class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-label">AI Developer & Data Scientist</div>
+                <div class="hero-label">AI Engineer</div>
                 <h1>Building Intelligent Systems</h1>
-                <p class="hero-subtitle">Bridging the gap between cutting-edge AI research and real-world applications through innovative solutions.</p>
+                <p class="hero-subtitle">Bridging the gap between cutting-edge AI research and real-world applications through RAG pipelines, multi-agent systems, and applied ML.</p>
                 <p class="hero-description">
-                    Currently pursuing a Master's in Data Science degree at Christ (Deemed to be University). 
-                    Specialized in LangChain, FastAPI, machine learning, and full-stack development with a focus on creating 
-                    scalable, intelligent applications.
+                    M.Sc. in Data Science, Christ (Deemed to be University). Specialized in LangChain, RAG, 
+                    vector search, and FastAPI, with 2 years of prior full-time experience in SQL/ETL data 
+                    engineering bringing production-grade reliability discipline to AI system design.
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
@@ -1234,19 +1239,19 @@
             </div>
             <div class="hero-stats">
                 <div class="stat-item">
-                    <div class="stat-number">2+</div>
+                    <div class="stat-number">~2</div>
                     <div class="stat-label">Years Experience</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">3+</div>
-                    <div class="stat-label">Major Projects</div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Projects Built</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">5+</div>
+                    <div class="stat-number">4</div>
                     <div class="stat-label">Certifications</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">10+</div>
+                    <div class="stat-number">15+</div>
                     <div class="stat-label">Technologies</div>
                 </div>
             </div>
@@ -1260,7 +1265,7 @@
             <div class="section-label">Career Journey</div>
             <h2 class="section-title">Work Experience</h2>
             <p class="section-description">
-                Professional journey spanning AI development, data science, and software engineering across innovative startups and global consulting firms.
+                Professional journey spanning AI/ML engineering and data engineering across an AI-focused startup and a global consulting firm.
             </p>
         </div>
         
@@ -1268,32 +1273,31 @@
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <h3 class="experience-title">AI Developer Intern</h3>
+                        <h3 class="experience-title">AI/ML Engineer (Graduate Practicum)</h3>
                         <div class="experience-company">KOTS Daily Services Pvt Ltd, Bangalore</div>
                     </div>
                     <div class="experience-date">April 2025 – October 2025</div>
                 </div>
                 <ul class="experience-list">
-                    <li>Architecting a scalable multi-agent framework using LangChain and FastAPI, implementing RAG pipeline with FAISS and Google Gemini to handle complex queries and enable intelligent agent coordination</li>
-                    <li>Developing a low-code/no-code platform to simplify agent creation and deployment, allowing non-technical users to build and integrate custom agents into the broader ecosystem</li>
-                    <li>Designing and implementing orchestration patterns for coordinating multiple specialized AI agents, enabling seamless collaboration between different AI services and tools</li>
-                    <li>Optimizing vector search performance and embedding strategies to improve retrieval accuracy and response time in production environments</li>
+                    <li>Designed a 3-agent LangChain/Google ADK workflow with a FastAPI orchestration layer, automating a multi-step enterprise process (retrieval, routing, response generation) as a proof-of-concept for scalable automation</li>
+                    <li>Improved contextual answer relevance by building and evaluating a RAG pipeline (FAISS vector database, Google Gemini embeddings) over PDFs and chat history, benchmarking retrieval quality against labeled queries</li>
+                    <li>Explored low-code agent creation patterns to simplify how non-technical users could configure and deploy custom agents within the POC ecosystem</li>
+                    <li>Prototyped orchestration patterns for coordinating multiple specialized AI agents toward a shared task</li>
                 </ul>
             </div>
             
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <h3 class="experience-title">Associate Analyst</h3>
+                        <h3 class="experience-title">Associate Analyst – Data/ETL Engineering</h3>
                         <div class="experience-company">Deloitte Consulting USI, Bangalore</div>
                     </div>
                     <div class="experience-date">August 2022 – June 2024</div>
                 </div>
                 <ul class="experience-list">
-                    <li>Validated functionality of approximately 80 reports generated using SAP BI, systematically identifying and documenting issues to ensure data accuracy and business intelligence integrity</li>
-                    <li>Executed comprehensive end-to-end testing for 184 reports created with ETL tools, conducting detailed functional reviews that significantly reduced deployment issues and improved data pipeline reliability</li>
-                    <li>Resolved five critical production issues related to ETL processes and SQL query optimization, directly impacting data processing efficiency and report generation performance</li>
-                    <li>Contributed to proof-of-concept development, exploring innovative solutions for complex data transformation and reporting challenges</li>
+                    <li>Protected the accuracy of 80+ SAP BI reports by validating 184 ETL jobs, reviewing SQL (stored procedures, DML, DDL) for correctness at production scale</li>
+                    <li>Root-caused and resolved 5 critical ETL/SQL defects through workflow redesign, improving downstream reporting stability</li>
+                    <li>Built an automated PDF validation proof-of-concept that cut manual QA effort by 60% — foundational data-reliability experience now applied to validating AI/RAG pipeline outputs</li>
                 </ul>
             </div>
         </div>
@@ -1306,87 +1310,200 @@
             <div class="section-label">Portfolio Showcase</div>
             <h2 class="section-title">Featured Projects</h2>
             <p class="section-description">
-                Selected work demonstrating expertise in AI systems, machine learning, and full-stack development with measurable impact.
+                RAG systems, multi-agent architectures, and applied ML — spanning agriculture, finance, energy, and generative AI.
             </p>
         </div>
         
         <div class="projects-grid">
+            <!-- 1. KrishiSahayak -->
             <div class="project-card">
-                <div class="project-image">
-                    <div class="project-number">01</div>
-                </div>
+                <div class="project-image"><div class="project-number">01</div></div>
                 <div class="project-content">
-                    <h3 class="project-title">Agricultural Multi-Agent System</h3>
-                    <div class="project-date">Present - Research in Progress</div>
+                    <h3 class="project-title">KrishiSahayak – AI Agri Scheme Assistant</h3>
+                    <div class="project-date">March 2026 · Completed</div>
                     <p class="project-description">
-                        Leading development of a comprehensive multi-agent system addressing accessibility gaps in agricultural AI. 
-                        Features a FastAPI backend with an LLM-based coordinator for intelligent agent orchestration. Research paper 
-                        in progress: "A Farmer-Centric Orchestration Framework for Collaborative Multi-Agent Agricultural AI Systems."
+                        A RAG-based chatbot helping Indian farmers understand government agricultural schemes quickly and accurately. 
+                        Combines local document retrieval (ChromaDB) with live web search fallback (Serper, DuckDuckGo) for grounded, 
+                        cited answers, with multi-provider LLM support (Gemini, OpenAI, Groq) and configurable response modes.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">LangChain</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">Multi-Agent Systems</span>
-                        <span class="tag">RAG Pipeline</span>
-                        <span class="tag">LLM Orchestration</span>
-                        <span class="tag">Research</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">ChromaDB</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Multi-LLM</span>
+                        <span class="tag">Gemini</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">View Research</a>
+                        <a href="https://github.com/RoshanVarghese/KisanSahayak" class="project-link" target="_blank">GitHub</a>
+                        <a href="https://kisansahayak.streamlit.app/" class="project-link" target="_blank">Live App</a>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- 2. FinMentor AI -->
             <div class="project-card">
-                <div class="project-image">
-                    <div class="project-number">02</div>
-                </div>
+                <div class="project-image"><div class="project-number">02</div></div>
                 <div class="project-content">
-                    <h3 class="project-title">IoT Malware Detection System</h3>
-                    <div class="project-date">March 2025</div>
+                    <h3 class="project-title">FinMentor AI</h3>
+                    <div class="project-date">Oct – Dec 2025 · Paused / Iterating</div>
                     <p class="project-description">
-                        Engineered a machine learning system for identifying and classifying malware in IoT devices. Implemented 
-                        and evaluated Random Forest and XGBoost models, achieving high accuracy in detecting various malware types. 
-                        Developed feature engineering pipeline to improve model performance and minimize false positives.
+                        A financial advisory system powered by specialized AI agents using a DSPy + LangChain architecture, providing 
+                        personalized investment advice, market analysis, and portfolio insights through a chat interface. FastAPI backend 
+                        with PGVector for semantic search; React/Vite frontend with TanStack Query and TailwindCSS. Development is 
+                        currently paused with further improvements planned.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">Machine Learning</span>
+                        <span class="tag">DSPy</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">PGVector</span>
+                        <span class="tag">React</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/RoshanVarghese/PortifolioBuilder" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Agricultural Multi-Agent System -->
+            <div class="project-card">
+                <div class="project-image"><div class="project-number">03</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Agricultural Multi-Agent System &amp; Research</h3>
+                    <div class="project-date">November 2025 · Research Paper In Progress</div>
+                    <p class="project-description">
+                        A 4-agent Agentic AI system (advisory, pricing, pest, chat) with an LLM coordinator and FastAPI backend for 
+                        farmer queries. Combines RAG over government scheme PDFs, price forecasting (ARIMA/SARIMA/Prophet), and a 
+                        14-class pest detection CV model. Companion research paper on farmer-centric multi-agent orchestration is 
+                        currently being written.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Multi-Agent</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Time-Series Forecasting</span>
+                        <span class="tag">Computer Vision</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-note">Code not yet published — happy to walk through it directly</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Text-to-Image Generator -->
+            <div class="project-card">
+                <div class="project-image"><div class="project-number">04</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Text-to-Image Generator</h3>
+                    <div class="project-date">August 2025 · Completed</div>
+                    <p class="project-description">
+                        A fine-tuned Stable Diffusion model that generates unique shoe designs from text prompts, using LoRA-based 
+                        fine-tuning (PEFT) for efficient adaptation. Deployed as an interactive Gradio app and hosted publicly on 
+                        Hugging Face Spaces.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Stable Diffusion</span>
+                        <span class="tag">PEFT / LoRA</span>
+                        <span class="tag">Diffusers</span>
+                        <span class="tag">Gradio</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/RoshanVarghese/TextToImage" class="project-link" target="_blank">GitHub</a>
+                        <a href="https://huggingface.co/spaces/roshanVarghese/ShoeGenerator" class="project-link" target="_blank">Hugging Face</a>
+                        <a href="https://colab.research.google.com/github/RoshanVarghese/TextToImage/blob/main/GenAI_TextToImage_GitHub.ipynb" class="project-link" target="_blank">Colab</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. VAE Face Generator -->
+            <div class="project-card">
+                <div class="project-image"><div class="project-number">05</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">VAE Face Generator</h3>
+                    <div class="project-date">August 2025 · Completed</div>
+                    <p class="project-description">
+                        A Variational Autoencoder that reconstructs uploaded face images and generates new random faces by sampling 
+                        from a learned latent space, with an interactive Gradio interface for both reconstruction and generation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">VAE</span>
+                        <span class="tag">Gradio</span>
+                        <span class="tag">Computer Vision</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/RoshanVarghese/VAE_FaceGenerator" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Electricity Demand Forecasting -->
+            <div class="project-card">
+                <div class="project-image"><div class="project-number">06</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">Electricity Demand Forecasting</h3>
+                    <div class="project-date">August 2025 · Completed</div>
+                    <p class="project-description">
+                        An interactive web app forecasting electricity demand from climatic data, comparing three forecasting 
+                        approaches — Prophet, SARIMAX, and LSTM — side by side, letting users predict future consumption under 
+                        different expected weather conditions.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Prophet</span>
+                        <span class="tag">SARIMAX</span>
+                        <span class="tag">LSTM</span>
+                        <span class="tag">Gradio</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/RoshanVarghese/ElectricityDemandForecasts" class="project-link" target="_blank">GitHub</a>
+                        <a href="https://colab.research.google.com/github/RoshanVarghese/ElectricityDemandForecasts/blob/main/TS_5ED_Forecast.ipynb" class="project-link" target="_blank">Colab</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. IoT Malware Detection -->
+            <div class="project-card">
+                <div class="project-image"><div class="project-number">07</div></div>
+                <div class="project-content">
+                    <h3 class="project-title">IoT Malware Detection System</h3>
+                    <div class="project-date">March 2025 · Completed</div>
+                    <p class="project-description">
+                        A machine learning system for identifying and classifying malware in IoT network traffic. Implemented and 
+                        compared Random Forest and XGBoost classifiers, with a feature engineering pipeline built to improve model 
+                        performance and reduce false positives.
+                    </p>
+                    <div class="project-tags">
                         <span class="tag">Random Forest</span>
                         <span class="tag">XGBoost</span>
                         <span class="tag">Cybersecurity</span>
-                        <span class="tag">Python</span>
                         <span class="tag">Scikit-Learn</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">View Project</a>
-                        <a href="#" class="project-link">GitHub</a>
+                        <a href="https://github.com/RoshanVarghese/IoTMalware_ML_Project" class="project-link" target="_blank">GitHub</a>
+                        <span class="project-note">(private repo — message me for access)</span>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- 8. Event Horizon -->
             <div class="project-card">
-                <div class="project-image">
-                    <div class="project-number">03</div>
-                </div>
+                <div class="project-image"><div class="project-number">08</div></div>
                 <div class="project-content">
-                    <h3 class="project-title">Event Horizon Management System</h3>
-                    <div class="project-date">December 2024</div>
+                    <h3 class="project-title">Event Horizon – Full-Stack App</h3>
+                    <div class="project-date">December 2024 · Completed</div>
                     <p class="project-description">
-                        Developed comprehensive full-stack web application for event management. Designed and implemented 
-                        responsive user interface using HTML, CSS, and JavaScript. Built robust backend using Flask framework 
-                        with MySQL database integration for efficient data management and retrieval.
+                        A full-stack event management application with a Flask backend, MySQL database, and a responsive 
+                        HTML/CSS/JS frontend, including authentication and CRUD APIs — an early backend/API design foundation 
+                        for later agentic systems work.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Flask</span>
                         <span class="tag">MySQL</span>
-                        <span class="tag">HTML/CSS</span>
                         <span class="tag">JavaScript</span>
-                        <span class="tag">Full-Stack</span>
-                        <span class="tag">SQLAlchemy</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                        <a href="https://github.com/RoshanVarghese/MDSWebProject" class="project-link" target="_blank">GitHub</a>
+                        <span class="project-note">(private repo — message me for access)</span>
                     </div>
                 </div>
             </div>
@@ -1400,54 +1517,59 @@
             <div class="section-label">Technical Expertise</div>
             <h2 class="section-title">Skills & Technologies</h2>
             <p class="section-description">
-                Comprehensive technical expertise across programming languages, frameworks, and tools for building modern AI and data-driven applications.
+                Core strength in RAG pipelines, multi-agent LLM systems, and vector search, backed by a data engineering foundation.
             </p>
         </div>
         
         <div class="skills-grid">
             <div class="skill-category">
-                <h3>Programming Languages</h3>
+                <h3>AI / LLM Engineering</h3>
                 <div class="skill-list">
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">SQL</div>
-                    <div class="skill-item">Java</div>
-                    <div class="skill-item">HTML/CSS</div>
-                    <div class="skill-item">JavaScript</div>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <h3>Data Science & ML</h3>
-                <div class="skill-list">
-                    <div class="skill-item">Pandas</div>
-                    <div class="skill-item">NumPy</div>
-                    <div class="skill-item">Scikit-Learn</div>
                     <div class="skill-item">LangChain</div>
-                    <div class="skill-item">Matplotlib</div>
-                    <div class="skill-item">FAISS</div>
-                    <div class="skill-item">XGBoost</div>
+                    <div class="skill-item">DSPy</div>
+                    <div class="skill-item">RAG / Vector Databases</div>
+                    <div class="skill-item">FAISS · ChromaDB · PGVector</div>
+                    <div class="skill-item">Embeddings</div>
+                    <div class="skill-item">LLMs (Gemini, Claude, OpenAI)</div>
+                    <div class="skill-item">Google ADK</div>
+                    <div class="skill-item">Prompt Engineering</div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>ML / Computer Vision</h3>
+                <div class="skill-list">
+                    <div class="skill-item">OpenCV</div>
+                    <div class="skill-item">Random Forest · XGBoost</div>
+                    <div class="skill-item">Time-Series Forecasting</div>
+                    <div class="skill-item">Stable Diffusion / VAE</div>
+                    <div class="skill-item">TensorFlow</div>
                 </div>
             </div>
             
             <div class="skill-category">
-                <h3>Web & Databases</h3>
+                <h3>Backend & Data</h3>
                 <div class="skill-list">
                     <div class="skill-item">FastAPI</div>
                     <div class="skill-item">Flask</div>
-                    <div class="skill-item">SQLAlchemy</div>
-                    <div class="skill-item">SQL Server</div>
-                    <div class="skill-item">MySQL</div>
+                    <div class="skill-item">REST APIs</div>
+                    <div class="skill-item">ETL Pipelines</div>
+                    <div class="skill-item">SQL · pandas / EDA</div>
+                    <div class="skill-item">PostgreSQL / MySQL</div>
+                    <div class="skill-item">SAP BI · Power BI</div>
                 </div>
             </div>
             
             <div class="skill-category">
-                <h3>Developer Tools</h3>
+                <h3>Infrastructure & Languages</h3>
                 <div class="skill-list">
-                    <div class="skill-item">Git</div>
                     <div class="skill-item">Docker</div>
-                    <div class="skill-item">VS Code</div>
-                    <div class="skill-item">Pentaho</div>
-                    <div class="skill-item">Informatica</div>
+                    <div class="skill-item">Linux (VPS)</div>
+                    <div class="skill-item">Git</div>
+                    <div class="skill-item">Tailscale</div>
+                    <div class="skill-item">Python · SQL</div>
+                    <div class="skill-item">JavaScript · HTML/CSS</div>
+                    <div class="skill-item">Java (academic)</div>
                 </div>
             </div>
         </div>
@@ -1465,7 +1587,7 @@
             <div class="education-item">
                 <h3 class="education-degree">Master of Science in Data Science</h3>
                 <div class="education-institution">Christ (Deemed to be University), Bangalore</div>
-                <div class="education-year">2024 – 2026 (Expected)</div>
+                <div class="education-year">2024 – 2026</div>
             </div>
             
             <div class="education-item">
@@ -1483,30 +1605,29 @@
         </div>
         
         <div class="certifications-grid">
-            <div class="cert-item">
+            <a href="https://verify.skilljar.com/c/bicz43f36awi" class="cert-item" target="_blank">
                 <div class="cert-name">Dataiku Core Designer (Fundamentals)</div>
                 <div class="cert-provider">Dataiku</div>
-            </div>
+                <div class="cert-date">Issued Feb 2024</div>
+            </a>
             
-            <div class="cert-item">
-                <div class="cert-name">Python Programming: A Concise Introduction</div>
-                <div class="cert-provider">Coursera</div>
-            </div>
-            
-            <div class="cert-item">
+            <a href="https://www.coursera.org/account/accomplishments/certificate/3SCMVP5QHZ6A" class="cert-item" target="_blank">
                 <div class="cert-name">Database Management Essentials</div>
                 <div class="cert-provider">Coursera</div>
-            </div>
+                <div class="cert-date">Issued Aug 2020</div>
+            </a>
             
-            <div class="cert-item">
+            <a href="https://www.coursera.org/account/accomplishments/certificate/JV6CNCEYGKF6" class="cert-item" target="_blank">
                 <div class="cert-name">Programming Fundamentals</div>
                 <div class="cert-provider">Coursera</div>
-            </div>
-            
-            <div class="cert-item">
-                <div class="cert-name">Artificial Intelligence (Fundamentals)</div>
-                <div class="cert-provider">My Captain</div>
-            </div>
+                <div class="cert-date">Issued Sep 2020</div>
+            </a>
+
+            <a href="https://www.coursera.org/account/accomplishments/certificate/PYHUJ5V8CVN8" class="cert-item" target="_blank">
+                <div class="cert-name">Python Programming: A Concise Introduction</div>
+                <div class="cert-provider">Coursera</div>
+                <div class="cert-date">Issued May 2020</div>
+            </a>
         </div>
     </section>
     
@@ -1516,7 +1637,7 @@
             <div class="section-label">Get In Touch</div>
             <h2 class="section-title">Let's Connect</h2>
             <p class="section-description">
-                Open to discussing new opportunities, collaborations, and innovative AI projects.
+                Open to discussing new opportunities, collaborations, and AI engineering roles.
             </p>
         </div>
         
@@ -1524,7 +1645,8 @@
             <div class="contact-info">
                 <h3>Available for Opportunities</h3>
                 <p>
-                    I'm always interested in discussing new projects, creative ideas, or opportunities to contribute to innovative AI and data science initiatives. Whether you're looking to collaborate or just want to connect, feel free to reach out.
+                    I'm always interested in discussing new projects, roles, or opportunities to contribute to AI and data 
+                    engineering teams. Whether you're looking to collaborate or just want to connect, feel free to reach out.
                 </p>
                 <ul class="contact-list">
                     <li class="contact-item">
@@ -1549,7 +1671,8 @@
             <div class="contact-info">
                 <h3>Online Presence</h3>
                 <p>
-                    Connect with me on professional networks to stay updated with my latest projects, research work, and contributions to the AI and data science community.
+                    Connect with me on professional networks to stay updated with my latest projects and contributions to the 
+                    AI and data science community.
                 </p>
                 <ul class="contact-list">
                     <li class="contact-item">
@@ -1572,7 +1695,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p class="footer-text">© 2025 Roshan Varghese. Crafted with precision and passion.</p>
+            <p class="footer-text">© 2026 Roshan Varghese. Crafted with precision and passion.</p>
             <ul class="footer-links">
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
