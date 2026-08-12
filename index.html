@@ -3,7 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roshan Varghese - AI Engineer</title>
+    <title>Roshan Varghese | AI Engineer — RAG, Multi-Agent Systems & Applied ML</title>
+    <meta name="description" content="Portfolio of Roshan Varghese, an AI Engineer specializing in RAG pipelines, multi-agent LLM systems, and applied ML, with a data engineering background from Deloitte and an M.Sc. in Data Science.">
+    <meta name="keywords" content="Roshan Varghese, AI Engineer, RAG, LangChain, Multi-Agent Systems, Machine Learning, Data Science, FastAPI, Bangalore">
+    <meta name="author" content="Roshan Varghese">
+    <link rel="canonical" href="https://roshanvarghese.dev/">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Roshan Varghese | AI Engineer">
+    <meta property="og:description" content="RAG pipelines, multi-agent LLM systems, and applied ML — bridging AI research and production-grade engineering.">
+    <meta property="og:image" content="https://roshanvarghese.dev/og-image.png">
+    <meta property="og:url" content="https://roshanvarghese.dev/">
+
+    <!-- Twitter/X card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Roshan Varghese | AI Engineer">
+    <meta name="twitter:description" content="RAG pipelines, multi-agent LLM systems, and applied ML — bridging AI research and production-grade engineering.">
+    <meta name="twitter:image" content="https://roshanvarghese.dev/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
     <style>
         * {
             margin: 0;
@@ -94,9 +114,40 @@
             border-radius: 50%;
         }
         
+        /* Scroll progress — a slim gradient rail under the nav that fills as you read,
+           echoing the same 01-05 sequence the page's sections are numbered with. */
+        .scroll-progress-track {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(30, 58, 95, 0.08);
+            z-index: 1001;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--navy-dark), var(--navy-primary), var(--navy-accent));
+            transition: width 0.1s linear;
+        }
+
+        /* Wrapper is inert on desktop (renders children in place); becomes the
+           sliding drawer chrome only inside the mobile media query below. */
+        .nav-links-panel {
+            display: contents;
+        }
+
+        .nav-drawer-header,
+        .nav-drawer-footer,
+        .nav-close {
+            display: none;
+        }
+
         .nav-links {
             display: flex;
-            gap: 50px;
+            gap: 46px;
             list-style: none;
             align-items: center;
         }
@@ -108,14 +159,30 @@
             font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
-            padding: 8px 0;
+            padding: 8px 0 8px 22px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .nav-links a::before {
+            content: attr(data-index);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: var(--navy-accent);
+            opacity: 0.5;
+            transition: opacity 0.3s ease, color 0.3s ease;
         }
         
         .nav-links a::after {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 22px;
             width: 0;
             height: 2px;
             background: var(--navy-primary);
@@ -125,9 +192,27 @@
         .nav-links a:hover {
             color: var(--navy-primary);
         }
+
+        .nav-links a:hover::before {
+            opacity: 1;
+        }
         
         .nav-links a:hover::after {
-            width: 100%;
+            width: calc(100% - 22px);
+        }
+
+        .nav-links a.active {
+            color: var(--navy-dark);
+        }
+
+        .nav-links a.active::before {
+            opacity: 1;
+            color: var(--navy-primary);
+        }
+
+        .nav-links a.active::after {
+            width: calc(100% - 22px);
+            background: linear-gradient(90deg, var(--navy-primary), var(--navy-accent));
         }
 
         .nav-toggle {
@@ -138,7 +223,14 @@
             border: none;
             cursor: pointer;
             padding: 8px;
+            border-radius: 6px;
             z-index: 1001;
+            transition: background 0.25s ease;
+        }
+
+        .nav-toggle:hover,
+        .nav-toggle:focus-visible {
+            background: rgba(30, 58, 95, 0.08);
         }
 
         .nav-toggle span {
@@ -472,12 +564,11 @@
         }
         
         .experience-item {
-            padding: 50px 0;
+            padding: 50px;
             position: relative;
             background: var(--white);
             margin-bottom: 40px;
             border-radius: 8px;
-            padding: 50px;
             box-shadow: 0 10px 40px rgba(30, 58, 95, 0.06);
             transition: all 0.3s ease;
         }
@@ -1170,6 +1261,8 @@
         .contact-value {
             font-size: 1.2rem;
             font-weight: 600;
+            overflow-wrap: anywhere;
+            word-break: break-word;
         }
         
         .contact-value a {
@@ -1230,7 +1323,8 @@
         
         .footer-links {
             display: flex;
-            gap: 40px;
+            flex-wrap: wrap;
+            gap: 15px 40px;
             justify-content: center;
             list-style: none;
         }
@@ -1247,6 +1341,32 @@
             color: var(--white);
         }
         
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            z-index: 2000;
+            background: var(--navy-dark);
+            color: var(--white);
+            padding: 14px 24px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0 0 6px 0;
+        }
+
+        .skip-link:focus {
+            left: 0;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
         @media (max-width: 1200px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -1266,25 +1386,153 @@
                 display: flex;
             }
 
-            .nav-links {
+            .nav-links-panel {
                 display: flex;
                 flex-direction: column;
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 70%;
-                max-width: 320px;
+                width: 78%;
+                max-width: 340px;
                 height: 100vh;
-                background: var(--white);
-                box-shadow: -10px 0 40px rgba(30, 58, 95, 0.15);
-                padding: 100px 40px;
-                gap: 30px;
+                background: linear-gradient(165deg, var(--white) 0%, var(--very-light) 100%);
+                box-shadow: -10px 0 40px rgba(30, 58, 95, 0.2);
+                border-left: 4px solid;
+                border-image: linear-gradient(to bottom, var(--navy-dark), var(--navy-light)) 1;
                 transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                 z-index: 1000;
+                overflow-y: auto;
             }
 
-            .nav-links.active {
+            .nav-links-panel.active {
                 right: 0;
+            }
+
+            .nav-drawer-header {
+                display: block;
+                position: relative;
+                padding: 46px 36px 28px;
+            }
+
+            .nav-drawer-name {
+                display: block;
+                font-size: 1.3rem;
+                font-weight: 800;
+                color: var(--navy-dark);
+                letter-spacing: -0.5px;
+            }
+
+            .nav-drawer-role {
+                display: block;
+                margin-top: 6px;
+                font-size: 0.7rem;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--navy-primary);
+                opacity: 0.75;
+            }
+
+            .nav-drawer-header::after {
+                content: '';
+                position: absolute;
+                left: 36px;
+                bottom: 0;
+                width: 40px;
+                height: 3px;
+                background: var(--navy-primary);
+            }
+
+            .nav-close {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 36px;
+                right: 28px;
+                width: 36px;
+                height: 36px;
+                background: rgba(30, 58, 95, 0.06);
+                border: none;
+                border-radius: 50%;
+                color: var(--navy-dark);
+                font-size: 1.3rem;
+                line-height: 1;
+                cursor: pointer;
+                transition: background 0.25s ease, transform 0.25s ease;
+            }
+
+            .nav-close:hover,
+            .nav-close:focus-visible {
+                background: var(--navy-primary);
+                color: var(--white);
+                transform: rotate(90deg);
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px 36px 20px;
+            }
+
+            .nav-links li {
+                border-bottom: 1px solid rgba(30, 58, 95, 0.08);
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 18px 0 18px 40px;
+                font-size: 1.1rem;
+            }
+
+            .nav-links a::before {
+                font-size: 0.85rem;
+                opacity: 0.35;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+
+            .nav-links a::after {
+                left: 0;
+                bottom: 12px;
+                height: 3px;
+            }
+
+            .nav-links a:hover,
+            .nav-links a.active {
+                padding-left: 46px;
+            }
+
+            .nav-links a:hover::after,
+            .nav-links a.active::after {
+                width: 24px;
+            }
+
+            .nav-drawer-footer {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-top: auto;
+                padding: 24px 36px 40px;
+                border-top: 1px solid rgba(30, 58, 95, 0.08);
+            }
+
+            .nav-drawer-footer a {
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: var(--navy-primary);
+                text-decoration: none;
+                letter-spacing: 0.3px;
+            }
+
+            .nav-drawer-footer a:hover {
+                text-decoration: underline;
             }
 
             .nav-overlay {
@@ -1313,6 +1561,11 @@
             .hero-subtitle {
                 font-size: 1.3rem;
             }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
             
             section {
                 padding: 100px 30px;
@@ -1321,9 +1574,23 @@
             .section-title {
                 font-size: 2.5rem;
             }
+
+            .section-number {
+                font-size: 5rem;
+                top: -36px;
+                left: -10px;
+            }
             
             .experience-timeline {
-                padding-left: 40px;
+                padding-left: 34px;
+            }
+
+            .experience-timeline::before {
+                left: 4px;
+            }
+
+            .experience-item::before {
+                left: -33px;
             }
             
             .contact-content {
@@ -1333,7 +1600,8 @@
             
             .skills-grid,
             .certifications-grid,
-            .projects-grid {
+            .projects-grid,
+            .projects-grid.featured {
                 grid-template-columns: 1fr;
             }
             
@@ -1359,30 +1627,69 @@
                 width: 100%;
                 text-align: center;
             }
+
+            .project-content {
+                padding: 32px;
+            }
+
+            .experience-item,
+            .education-item {
+                padding: 32px;
+            }
+
+            .contact-info {
+                padding: 30px;
+            }
+
+            .contact-info h3 {
+                font-size: 1.7rem;
+            }
+
+            .footer-links {
+                gap: 12px 24px;
+            }
         }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">Roshan Varghese</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+            <div class="nav-links-panel" id="navLinksPanel">
+                <div class="nav-drawer-header">
+                    <span class="nav-drawer-name">Roshan Varghese</span>
+                    <span class="nav-drawer-role">AI Engineer</span>
+                    <button class="nav-close" id="navClose" aria-label="Close navigation menu">&times;</button>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#experience" data-index="01">Experience</a></li>
+                    <li><a href="#projects" data-index="02">Projects</a></li>
+                    <li><a href="#skills" data-index="03">Skills</a></li>
+                    <li><a href="#education" data-index="04">Education</a></li>
+                    <li><a href="#contact" data-index="05">Contact</a></li>
+                </ul>
+                <div class="nav-drawer-footer">
+                    <a href="mailto:roshan.varghese5801@gmail.com">roshan.varghese5801@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/roshan-varghese-022986217" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                    <a href="https://github.com/RoshanVarghese" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                </div>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinksPanel">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
+        <div class="scroll-progress-track" aria-hidden="true">
+            <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+        </div>
     </nav>
     <div class="nav-overlay" id="navOverlay"></div>
     
+    <main id="main-content">
     <!-- Hero Section -->
     <div class="hero">
         <div class="hero-container">
@@ -1424,7 +1731,7 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="section-header">
-            <div class="section-number">01</div>
+            <div class="section-number" aria-hidden="true">01</div>
             <div class="section-label">Career Journey</div>
             <h2 class="section-title">Work Experience</h2>
             <p class="section-description">
@@ -1483,7 +1790,7 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="section-header">
-            <div class="section-number">02</div>
+            <div class="section-number" aria-hidden="true">02</div>
             <div class="section-label">Portfolio Showcase</div>
             <h2 class="section-title">Featured Projects</h2>
             <p class="section-description">
@@ -1494,7 +1801,7 @@
         <div class="projects-grid featured">
             <!-- 1. KrishiSahayak -->
             <div class="project-card">
-                <div class="project-image"><div class="project-number">01</div></div>
+                <div class="project-image" aria-hidden="true"><div class="project-number">01</div></div>
                 <div class="project-content">
                     <h3 class="project-title">KrishiSahayak – AI Agri Scheme Assistant</h3>
                     <div class="project-date">March 2026 · Completed</div>
@@ -1511,8 +1818,8 @@
                         <span class="tag">Gemini</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/RoshanVarghese/KisanSahayak" class="project-link" target="_blank">GitHub</a>
-                        <a href="https://kisansahayak.streamlit.app/" class="project-link" target="_blank">Live App</a>
+                        <a href="https://github.com/RoshanVarghese/KisanSahayak" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://kisansahayak.streamlit.app/" class="project-link" target="_blank" rel="noopener noreferrer">Live App</a>
                     </div>
                 </div>
             </div>
@@ -1521,7 +1828,7 @@
 
             <!-- 3. Agricultural Multi-Agent System -->
             <div class="project-card">
-                <div class="project-image"><div class="project-number">02</div></div>
+                <div class="project-image" aria-hidden="true"><div class="project-number">02</div></div>
                 <div class="project-content">
                     <h3 class="project-title">Agricultural Multi-Agent System &amp; Research</h3>
                     <div class="project-date">Jul – Nov 2025 · Presented at WCSC 2026</div>
@@ -1541,7 +1848,7 @@
                         <span class="tag">Published Research</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://app-v3.proofeasy.io/credential/o9hsaz17594?domain=https%3A%2F%2Fscrs.in" class="project-link" target="_blank">View Credential</a>
+                        <a href="https://app-v3.proofeasy.io/credential/o9hsaz17594?domain=https%3A%2F%2Fscrs.in" class="project-link" target="_blank" rel="noopener noreferrer">View Credential</a>
                         <span class="project-note">Code not yet published — happy to walk through it directly</span>
                     </div>
                 </div>
@@ -1566,7 +1873,7 @@
                     <span class="tag">React</span>
                 </div>
                 <div class="project-compact-links">
-                    <a href="https://github.com/RoshanVarghese/PortifolioBuilder" target="_blank">GitHub</a>
+                    <a href="https://github.com/RoshanVarghese/PortifolioBuilder" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <span class="project-note">(private — message me for access)</span>
                 </div>
             </div>
@@ -1585,9 +1892,9 @@
                     <span class="tag">Gradio</span>
                 </div>
                 <div class="project-compact-links">
-                    <a href="https://github.com/RoshanVarghese/TextToImage" target="_blank">GitHub</a>
-                    <a href="https://huggingface.co/spaces/roshanVarghese/ShoeGenerator" target="_blank">Hugging Face</a>
-                    <a href="https://colab.research.google.com/github/RoshanVarghese/TextToImage/blob/main/GenAI_TextToImage_GitHub.ipynb" target="_blank">Colab</a>
+                    <a href="https://github.com/RoshanVarghese/TextToImage" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://huggingface.co/spaces/roshanVarghese/ShoeGenerator" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+                    <a href="https://colab.research.google.com/github/RoshanVarghese/TextToImage/blob/main/GenAI_TextToImage_GitHub.ipynb" target="_blank" rel="noopener noreferrer">Colab</a>
                 </div>
             </div>
 
@@ -1605,7 +1912,7 @@
                     <span class="tag">Gradio</span>
                 </div>
                 <div class="project-compact-links">
-                    <a href="https://github.com/RoshanVarghese/VAE_FaceGenerator" target="_blank">GitHub</a>
+                    <a href="https://github.com/RoshanVarghese/VAE_FaceGenerator" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
 
@@ -1623,8 +1930,8 @@
                     <span class="tag">LSTM</span>
                 </div>
                 <div class="project-compact-links">
-                    <a href="https://github.com/RoshanVarghese/ElectricityDemandForecasts" target="_blank">GitHub</a>
-                    <a href="https://colab.research.google.com/github/RoshanVarghese/ElectricityDemandForecasts/blob/main/TS_5ED_Forecast.ipynb" target="_blank">Colab</a>
+                    <a href="https://github.com/RoshanVarghese/ElectricityDemandForecasts" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://colab.research.google.com/github/RoshanVarghese/ElectricityDemandForecasts/blob/main/TS_5ED_Forecast.ipynb" target="_blank" rel="noopener noreferrer">Colab</a>
                 </div>
             </div>
 
@@ -1642,7 +1949,7 @@
                     <span class="tag">Cybersecurity</span>
                 </div>
                 <div class="project-compact-links">
-                    <a href="https://github.com/RoshanVarghese/IoTMalware_ML_Project" target="_blank">GitHub</a>
+                    <a href="https://github.com/RoshanVarghese/IoTMalware_ML_Project" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
 
@@ -1660,7 +1967,7 @@
                     <span class="tag">JavaScript</span>
                 </div>
                 <div class="project-compact-links">
-                    <a href="https://github.com/RoshanVarghese/MDSWebProject" target="_blank">GitHub</a>
+                    <a href="https://github.com/RoshanVarghese/MDSWebProject" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
 
@@ -1670,7 +1977,7 @@
     <!-- Skills Section -->
     <section id="skills">
         <div class="section-header">
-            <div class="section-number">03</div>
+            <div class="section-number" aria-hidden="true">03</div>
             <div class="section-label">Technical Expertise</div>
             <h2 class="section-title">Skills & Technologies</h2>
             <p class="section-description">
@@ -1757,7 +2064,7 @@
     <!-- Education Section -->
     <section id="education">
         <div class="section-header">
-            <div class="section-number">04</div>
+            <div class="section-number" aria-hidden="true">04</div>
             <div class="section-label">Academic Background</div>
             <h2 class="section-title">Education</h2>
         </div>
@@ -1781,31 +2088,31 @@
     <!-- Certifications Section -->
     <section id="certifications">
         <div class="section-header">
-            <div class="section-number">05</div>
+            <div class="section-number" aria-hidden="true">05</div>
             <div class="section-label">Professional Development</div>
             <h2 class="section-title">Certifications</h2>
         </div>
         
         <div class="certifications-grid">
-            <a href="https://verify.skilljar.com/c/bicz43f36awi" class="cert-item" target="_blank">
+            <a href="https://verify.skilljar.com/c/bicz43f36awi" class="cert-item" target="_blank" rel="noopener noreferrer">
                 <div class="cert-name">Dataiku Core Designer (Fundamentals)</div>
                 <div class="cert-provider">Dataiku</div>
                 <div class="cert-date">Issued Feb 2024</div>
             </a>
             
-            <a href="https://www.coursera.org/account/accomplishments/certificate/3SCMVP5QHZ6A" class="cert-item" target="_blank">
+            <a href="https://www.coursera.org/account/accomplishments/certificate/3SCMVP5QHZ6A" class="cert-item" target="_blank" rel="noopener noreferrer">
                 <div class="cert-name">Database Management Essentials</div>
                 <div class="cert-provider">Coursera</div>
                 <div class="cert-date">Issued Aug 2020</div>
             </a>
             
-            <a href="https://www.coursera.org/account/accomplishments/certificate/JV6CNCEYGKF6" class="cert-item" target="_blank">
+            <a href="https://www.coursera.org/account/accomplishments/certificate/JV6CNCEYGKF6" class="cert-item" target="_blank" rel="noopener noreferrer">
                 <div class="cert-name">Programming Fundamentals</div>
                 <div class="cert-provider">Coursera</div>
                 <div class="cert-date">Issued Sep 2020</div>
             </a>
 
-            <a href="https://www.coursera.org/account/accomplishments/certificate/PYHUJ5V8CVN8" class="cert-item" target="_blank">
+            <a href="https://www.coursera.org/account/accomplishments/certificate/PYHUJ5V8CVN8" class="cert-item" target="_blank" rel="noopener noreferrer">
                 <div class="cert-name">Python Programming: A Concise Introduction</div>
                 <div class="cert-provider">Coursera</div>
                 <div class="cert-date">Issued May 2020</div>
@@ -1860,19 +2167,20 @@
                     <li class="contact-item">
                         <div class="contact-label">LinkedIn</div>
                         <div class="contact-value">
-                            <a href="https://www.linkedin.com/in/roshan-varghese-022986217" target="_blank">linkedin.com/in/roshan-varghese-022986217</a>
+                            <a href="https://www.linkedin.com/in/roshan-varghese-022986217" target="_blank" rel="noopener noreferrer">linkedin.com/in/roshan-varghese-022986217</a>
                         </div>
                     </li>
                     <li class="contact-item">
                         <div class="contact-label">GitHub</div>
                         <div class="contact-value">
-                            <a href="https://github.com/RoshanVarghese" target="_blank">github.com/RoshanVarghese</a>
+                            <a href="https://github.com/RoshanVarghese" target="_blank" rel="noopener noreferrer">github.com/RoshanVarghese</a>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
+    </main>
     
     <!-- Footer -->
     <footer>
@@ -1890,26 +2198,65 @@
 
     <script>
         const navToggle = document.getElementById('navToggle');
+        const navLinksPanel = document.getElementById('navLinksPanel');
         const navLinks = document.getElementById('navLinks');
         const navOverlay = document.getElementById('navOverlay');
+        const navClose = document.getElementById('navClose');
 
         function closeMenu() {
             navToggle.classList.remove('active');
-            navLinks.classList.remove('active');
+            navLinksPanel.classList.remove('active');
             navOverlay.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
         }
 
         navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            const isOpen = navToggle.classList.toggle('active');
+            navLinksPanel.classList.toggle('active');
             navOverlay.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
         });
 
+        navClose.addEventListener('click', closeMenu);
         navOverlay.addEventListener('click', closeMenu);
 
-        navLinks.querySelectorAll('a').forEach(link => {
+        const navAnchorLinks = navLinks.querySelectorAll('a');
+        navAnchorLinks.forEach(link => {
             link.addEventListener('click', closeMenu);
         });
+
+        // Highlight the nav link for the section currently in view.
+        const trackedSections = ['experience', 'projects', 'skills', 'education', 'contact']
+            .map(id => document.getElementById(id))
+            .filter(Boolean);
+
+        if ('IntersectionObserver' in window && trackedSections.length) {
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navAnchorLinks.forEach(link => {
+                            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                        });
+                    }
+                });
+            }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+            trackedSections.forEach(section => sectionObserver.observe(section));
+        }
+
+        // Fill a slim progress rail under the nav as the page is scrolled.
+        const scrollProgressBar = document.getElementById('scrollProgressBar');
+
+        function updateScrollProgress() {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            scrollProgressBar.style.width = progress + '%';
+        }
+
+        window.addEventListener('scroll', updateScrollProgress, { passive: true });
+        window.addEventListener('resize', updateScrollProgress);
+        updateScrollProgress();
     </script>
 </body>
-</html>
+    </html>
