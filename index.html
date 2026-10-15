@@ -1714,11 +1714,11 @@
                     <div class="stat-label">Years Experience</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">8</div>
+                    <div class="stat-number" data-count-of=".project-card, .project-compact-card">8</div>
                     <div class="stat-label">Projects Built</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">4</div>
+                    <div class="stat-number" data-count-of="#certifications .cert-item">5</div>
                     <div class="stat-label">Certifications</div>
                 </div>
                 <div class="stat-item">
@@ -2095,24 +2095,30 @@
         </div>
         
         <div class="certifications-grid">
+            <a href="https://www.credly.com/earner/earned/badge/5946ff2f-f5f9-4a84-b070-d90104868b19" class="cert-item" target="_blank" rel="noopener noreferrer">
+                <div class="cert-name">AWS Certified AI Practitioner</div>
+                <div class="cert-provider">AWS Training and Certification</div>
+                <div class="cert-date">Issued Sep 2026 · Expires Sep 2029</div>
+            </a>
+        
             <a href="https://verify.skilljar.com/c/bicz43f36awi" class="cert-item" target="_blank" rel="noopener noreferrer">
                 <div class="cert-name">Dataiku Core Designer (Fundamentals)</div>
                 <div class="cert-provider">Dataiku</div>
                 <div class="cert-date">Issued Feb 2024</div>
             </a>
-            
-            <a href="https://www.coursera.org/account/accomplishments/certificate/3SCMVP5QHZ6A" class="cert-item" target="_blank" rel="noopener noreferrer">
-                <div class="cert-name">Database Management Essentials</div>
-                <div class="cert-provider">Coursera</div>
-                <div class="cert-date">Issued Aug 2020</div>
-            </a>
-            
+        
             <a href="https://www.coursera.org/account/accomplishments/certificate/JV6CNCEYGKF6" class="cert-item" target="_blank" rel="noopener noreferrer">
                 <div class="cert-name">Programming Fundamentals</div>
                 <div class="cert-provider">Coursera</div>
                 <div class="cert-date">Issued Sep 2020</div>
             </a>
-
+        
+            <a href="https://www.coursera.org/account/accomplishments/certificate/3SCMVP5QHZ6A" class="cert-item" target="_blank" rel="noopener noreferrer">
+                <div class="cert-name">Database Management Essentials</div>
+                <div class="cert-provider">Coursera</div>
+                <div class="cert-date">Issued Aug 2020</div>
+            </a>
+        
             <a href="https://www.coursera.org/account/accomplishments/certificate/PYHUJ5V8CVN8" class="cert-item" target="_blank" rel="noopener noreferrer">
                 <div class="cert-name">Python Programming: A Concise Introduction</div>
                 <div class="cert-provider">Coursera</div>
@@ -2260,6 +2266,12 @@
         window.addEventListener('scroll', updateScrollProgress, { passive: true });
         window.addEventListener('resize', updateScrollProgress);
         updateScrollProgress();
+        // Keep stats in sync with the page: any .stat-number with a data-count-of
+        // selector shows how many matching elements exist.
+        document.querySelectorAll('[data-count-of]').forEach(stat => {
+            const count = document.querySelectorAll(stat.dataset.countOf).length;
+            if (count > 0) stat.textContent = count;
+        });
     </script>
 </body>
     </html>
