@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roshan Varghese | AI Engineer — RAG, Multi-Agent Systems & Applied ML</title>
-    <meta name="description" content="Portfolio of Roshan Varghese, an AI Engineer specializing in RAG pipelines, multi-agent LLM systems, and applied ML, with a data engineering background from Deloitte and an M.Sc. in Data Science.">
-    <meta name="keywords" content="Roshan Varghese, AI Engineer, RAG, LangChain, Multi-Agent Systems, Machine Learning, Data Science, FastAPI, Bangalore">
+    <title>Roshan Varghese | Data &amp; AI Engineer — RAG, Multi-Agent Systems &amp; Data Engineering</title>
+    <meta name="description" content="Portfolio of Roshan Varghese, a Data &amp; AI Engineer building RAG pipelines, multi-agent LLM systems, and applied ML, with 2 years of data/ETL engineering at Deloitte and an M.Sc. in Data Science.">
+    <meta name="keywords" content="Roshan Varghese, Data &amp; AI Engineer, Data Engineer, ETL, SQL, RAG, LangChain, Multi-Agent Systems, Machine Learning, Data Science, FastAPI, Bangalore">
     <meta name="author" content="Roshan Varghese">
     <link rel="canonical" href="https://roshanvarghese.github.io/">
 
     <!-- Open Graph / social preview -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Roshan Varghese | AI Engineer">
-    <meta property="og:description" content="RAG pipelines, multi-agent LLM systems, and applied ML — bridging AI research and production-grade engineering.">
+    <meta property="og:title" content="Roshan Varghese | Data &amp; AI Engineer">
+    <meta property="og:description" content="Data &amp; AI engineer: RAG pipelines, multi-agent LLM systems, and applied ML, built on a data engineering foundation.">
     <meta property="og:image" content="https://roshanvarghese.github.io/og-image.png">
     <meta property="og:url" content="https://roshanvarghese.github.io/">
 
     <!-- Twitter/X card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Roshan Varghese | AI Engineer">
-    <meta name="twitter:description" content="RAG pipelines, multi-agent LLM systems, and applied ML — bridging AI research and production-grade engineering.">
+    <meta name="twitter:title" content="Roshan Varghese | Data &amp; AI Engineer">
+    <meta name="twitter:description" content="Data &amp; AI engineer: RAG pipelines, multi-agent LLM systems, and applied ML, built on a data engineering foundation.">
     <meta name="twitter:image" content="https://roshanvarghese.github.io/og-image.png">
 
     <!-- Favicon -->
@@ -1649,6 +1649,13 @@
                 gap: 12px 24px;
             }
         }
+            .hero-availability {
+            flex-basis: 100%;
+            margin-top: 14px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+        }
     </style>
 </head>
 <body>
@@ -1661,7 +1668,7 @@
             <div class="nav-links-panel" id="navLinksPanel">
                 <div class="nav-drawer-header">
                     <span class="nav-drawer-name">Roshan Varghese</span>
-                    <span class="nav-drawer-role">AI Engineer</span>
+                    <span class="nav-drawer-role">Data &amp; AI Engineer</span>
                     <button class="nav-close" id="navClose" aria-label="Close navigation menu">&times;</button>
                 </div>
                 <ul class="nav-links" id="navLinks">
@@ -1695,17 +1702,19 @@
     <div class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-label">AI Engineer</div>
+                <div class="hero-label">Data &amp; AI Engineer</div>
                 <h1>Building Intelligent Systems</h1>
-                <p class="hero-subtitle">Bridging the gap between cutting-edge AI research and real-world applications through RAG pipelines, multi-agent systems, and applied ML.</p>
+                <p class="hero-subtitle">From reliable data to working AI: RAG pipelines, multi-agent systems, and applied ML, built on a data engineering foundation.</p>
                 <p class="hero-description">
                     M.Sc. in Data Science, Christ (Deemed to be University). Specialized in LangChain, RAG, 
                     vector search, and FastAPI, with 2 years of prior full-time experience in SQL/ETL data 
-                    engineering bringing production-grade reliability discipline to AI system design.
+                    engineering bringing production-grade reliability discipline to AI system design. AWS Certified AI Practitioner.
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
                     <a href="#projects" class="btn btn-secondary">View Projects</a>
+                    <a href="Roshan_Varghese_Resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+                    <p class="hero-availability">Open to data engineering, data analyst and AI/ML roles · Bengaluru · Remote / OnSite</p>
                 </div>
             </div>
             <div class="hero-stats">
@@ -1744,28 +1753,31 @@
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <h3 class="experience-title">Vision AI Engineer (Graduate Practicum)</h3>
+                        <h3 class="experience-title">Vision AI Intern</h3>
                         <div class="experience-company">Codexoho Digitals Pvt Ltd, Bangalore</div>
                     </div>
-                    <div class="experience-date">February 2026 – April 2026</div>
+                    <div class="experience-date">February 2026 – March 2026</div>
                 </div>
                 <ul class="experience-list">
-                    <li>Automated employee/visitor identification and attendance logging by fine-tuning an OpenCV facial recognition pipeline, deployed live via a FastAPI backend and Next.js/React dashboard (Postgres, Docker, VPS, Tailscale-tunneled RTSP)</li>
-                    <li>Piloted the fine-tuned pipeline on 2 cameras in production and led investigation into GPU-efficient scaling strategies (quantization, batching) to extend the system to the full 40-camera deployment</li>
+                    <li>Integrated and tuned the AI pipeline for a near-real-time facial-recognition attendance and visitor-management system (2-person team): YOLOv8-Face detection, BoT-SORT tracking and AdaFace IR50 embeddings matched against an employee gallery in PostgreSQL by cosine similarity, with a tuned threshold, a liveness check added after mannequins were detected as people, and a 4-attempt limit before classifying someone as a visitor</li>
+                    <li>Built the FastAPI REST/WebSocket backend, an 11-table PostgreSQL schema (SQLAlchemy) and JWT role-based access; deployed on a VPS with Docker, MediaMTX and Tailscale-tunneled RTSP for a 2-camera, 37-employee pilot, alongside a Next.js/React dashboard built mainly by my teammate</li>
+                    <li>Identified 8 of 10 employees (80%) in a recorded-video test and 6 of 10 (60%) in a live CPU test; cut average per-frame latency from &gt;2s to &lt;500ms by running AdaFace only on new tracks, passing AdaFace embeddings into BoT-SORT and lowering YOLO input resolution</li>
+                    <li>Experimented with quantization and batching on a local GPU machine and compared GPU vs CPU in Colab to recommend an RTX 4090 for scaling toward 40 cameras</li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="experience-header">
                     <div>
-                        <h3 class="experience-title">AI/ML Engineer (Graduate Practicum)</h3>
+                        <h3 class="experience-title">AI Developer Intern</h3>
                         <div class="experience-company">KOTS Daily Services Pvt Ltd, Bangalore</div>
                     </div>
                     <div class="experience-date">April 2025 – October 2025</div>
                 </div>
                 <ul class="experience-list">
-                    <li>Designed a 3-agent LangChain/Google ADK workflow with a FastAPI orchestration layer, automating a multi-step enterprise process (retrieval, routing, response generation) as a proof-of-concept for scalable automation</li>
-                    <li>Improved contextual answer relevance by building and evaluating a RAG pipeline (FAISS vector database, Google Gemini embeddings) over PDFs and chat history, benchmarking retrieval quality against labeled queries</li>
+                    <li>Designed a decentralized 3-agent LangChain/Google ADK workflow (Jira, Calendar/Notion, Knowledge) with a FastAPI orchestration layer and role-based access control, automating a multi-step enterprise process (retrieval, routing, response generation) as a proof-of-concept; moved from a centralized design to remove a single point of failure</li>
+                    <li>Improved contextual answer relevance by building and evaluating a RAG pipeline (FAISS vector database, Google Gemini embeddings) over PDFs and chat history, benchmarking retrieval quality against labeled queries and tracing queries with LangSmith to track token usage and response time</li>
+                    <li>Fixed a context-memory bug that made agents re-request details after 5 conversation turns</li>
                     <li>Explored low-code agent creation patterns to simplify how non-technical users could configure and deploy custom agents within the POC ecosystem</li>
                     <li>Prototyped orchestration patterns for coordinating multiple specialized AI agents toward a shared task</li>
                 </ul>
@@ -1780,9 +1792,9 @@
                     <div class="experience-date">August 2022 – June 2024</div>
                 </div>
                 <ul class="experience-list">
-                    <li>Protected the accuracy of 80+ SAP BI reports by validating 184 ETL jobs, reviewing SQL (stored procedures, DML, DDL) for correctness at production scale</li>
-                    <li>Root-caused and resolved 5 critical ETL/SQL defects through workflow redesign, improving downstream reporting stability</li>
-                    <li>Built an automated PDF validation proof-of-concept that cut manual QA effort by 60% — foundational data-reliability experience now applied to validating AI/RAG pipeline outputs</li>
+                    <li>Tested 80+ SAP BI reports to confirm data populated accurately, and validated 184+ Pentaho ETL jobs and the reports they generated in the healthcare domain, reviewing SQL (stored procedures, DML, DDL) for correctness and raising issues with root-cause analyses</li>
+                    <li>Root-caused 5 critical ETL/SQL issues assigned through Jira, including a data-integrity defect in 2 ETL jobs; rebuilt the jobs, tested them in a sandbox and promoted them through dev and UAT to production only after each stage passed, reprocessing historical data so reports were accurate</li>
+                    <li>Built a proof-of-concept PDF validator to automate format checks on generated reports — foundational data-reliability experience now applied to validating AI/RAG pipeline outputs</li>
                 </ul>
             </div>
         </div>
@@ -1805,11 +1817,11 @@
                 <div class="project-image" aria-hidden="true"><div class="project-number">01</div></div>
                 <div class="project-content">
                     <h3 class="project-title">KrishiSahayak – AI Agri Scheme Assistant</h3>
-                    <div class="project-date">March 2026 · Completed</div>
+                    <div class="project-date">February – March 2026 · Completed</div>
                     <p class="project-description">
                         A RAG-based chatbot helping Indian farmers understand government agricultural schemes quickly and accurately. 
                         Combines local document retrieval (ChromaDB) with live web search fallback (Serper, DuckDuckGo) for grounded, 
-                        cited answers, with multi-provider LLM support (Gemini, OpenAI, Groq) and configurable response modes.
+                        cited answers, with multi-provider LLM support (Gemini, OpenAI, Groq) and configurable response modes. Indexes 10 government scheme documents; evaluated on 25+ test queries at 2–4s response time.
                     </p>
                     <div class="project-tags">
                         <span class="tag">RAG</span>
@@ -1832,11 +1844,11 @@
                 <div class="project-image" aria-hidden="true"><div class="project-number">02</div></div>
                 <div class="project-content">
                     <h3 class="project-title">Agricultural Multi-Agent System &amp; Research</h3>
-                    <div class="project-date">Jul – Nov 2025 · Presented at WCSC 2026</div>
+                    <div class="project-date">Jul – Oct 2025 · Presented at WCSC 2026</div>
                     <p class="project-description">
                         A 4-agent Agentic AI system (advisory, pricing, pest, chat) with an LLM coordinator and FastAPI backend for 
                         farmer queries. Combines RAG over government scheme PDFs, price forecasting (ARIMA/SARIMA/Prophet), and a 
-                        14-class pest detection CV model. Co-authored paper, <em>"A Farmer-Centric Orchestration Framework for 
+                        14-class pest detection CV model, reaching a 90% query success rate (36/40) at 2.94s average latency. Co-authored paper, <em>"A Farmer-Centric Orchestration Framework for 
                         Collaborative Multi-Agent Agricultural AI Systems,"</em> presented at the 3rd World Congress on Smart 
                         Computing (WCSC 2026), Bangkok, Thailand — January 2026.
                     </p>
@@ -1846,7 +1858,7 @@
                         <span class="tag">FastAPI</span>
                         <span class="tag">Time-Series Forecasting</span>
                         <span class="tag">Computer Vision</span>
-                        <span class="tag">Published Research</span>
+                        <span class="tag">Presented at WCSC 2026</span>
                     </div>
                     <div class="project-links">
                         <a href="https://app-v3.proofeasy.io/credential/o9hsaz17594?domain=https%3A%2F%2Fscrs.in" class="project-link" target="_blank" rel="noopener noreferrer">View Credential</a>
@@ -2003,6 +2015,10 @@
                     <div class="skill-item">OpenAI</div>
                     <div class="skill-item">Google ADK</div>
                     <div class="skill-item">Prompt Engineering</div>
+                    <div class="skill-item">Claude Code</div>
+                    <div class="skill-item">GitHub Copilot</div>
+                    <div class="skill-item">LangSmith</div>
+                    <div class="skill-item">Groq</div>
                 </div>
             </div>
 
@@ -2016,6 +2032,14 @@
                     <div class="skill-item">Stable Diffusion</div>
                     <div class="skill-item">VAE</div>
                     <div class="skill-item">TensorFlow</div>
+                    <div class="skill-item">PyTorch</div>
+                    <div class="skill-item">scikit-learn</div>
+                    <div class="skill-item">NumPy</div>
+                    <div class="skill-item">Prophet / ARIMA</div>
+                    <div class="skill-item">YOLOv8-Face</div>
+                    <div class="skill-item">BoT-SORT</div>
+                    <div class="skill-item">AdaFace</div>
+                    <div class="skill-item">MediaPipe</div>
                 </div>
             </div>
             
@@ -2028,6 +2052,11 @@
                     <div class="skill-item">Next.js</div>
                     <div class="skill-item">React</div>
                     <div class="skill-item">REST APIs</div>
+                    <div class="skill-item">WebSockets</div>
+                    <div class="skill-item">JWT</div>
+                    <div class="skill-item">SQLAlchemy</div>
+                    <div class="skill-item">Pydantic</div>
+                    <div class="skill-item">pytest</div>
                 </div>
             </div>
 
@@ -2040,9 +2069,9 @@
                     <div class="skill-item">PostgreSQL</div>
                     <div class="skill-item">MySQL</div>
                     <div class="skill-item">SAP BI</div>
-                    <div class="skill-item">Power BI</div>
+                    <div class="skill-item">Power BI (training)</div>
                     <div class="skill-item">Pentaho</div>
-                    <div class="skill-item">Informatica</div>
+                    <div class="skill-item">Informatica (training)</div>
                 </div>
             </div>
             
@@ -2053,6 +2082,7 @@
                     <div class="skill-item">Linux (VPS)</div>
                     <div class="skill-item">Git</div>
                     <div class="skill-item">Tailscale</div>
+                    <div class="skill-item">AWS Amplify</div>
                     <div class="skill-item">Python</div>
                     <div class="skill-item">JavaScript</div>
                     <div class="skill-item">HTML/CSS</div>
@@ -2134,7 +2164,7 @@
             <div class="section-label">Get In Touch</div>
             <h2 class="section-title">Let's Connect</h2>
             <p class="section-description">
-                Open to discussing new opportunities, collaborations, and AI engineering roles.
+                Open to discussing new opportunities, collaborations, and data and AI engineering roles.
             </p>
         </div>
         
@@ -2150,12 +2180,6 @@
                         <div class="contact-label">Email</div>
                         <div class="contact-value">
                             <a href="mailto:roshan.varghese5801@gmail.com">roshan.varghese5801@gmail.com</a>
-                        </div>
-                    </li>
-                    <li class="contact-item">
-                        <div class="contact-label">Phone</div>
-                        <div class="contact-value">
-                            <a href="tel:+919632244517">+91 9632244517</a>
                         </div>
                     </li>
                     <li class="contact-item">
